@@ -1,13 +1,13 @@
 # django
 learn django framwork
 
-Installing xmapp: 
+## Installing xmapp: 
 https://blog.templatetoaster.com/install-xampp-on-windows/
 
-mysql database as backend database using xmapp:
+## mysql database as backend database using xmapp:
 http://localhost/phpmyadmin
 
-When using power shell make sure to set Execution Policy as:
+## When using power shell make sure to set Execution Policy as:
 Set-ExecutionPolicy AllSigned -Scope CurrentUser -Force
 Set-ExecutionPolicy Bypass -Scope CurrentUser -Force
 Set-ExecutionPolicy Default -Scope CurrentUser -Force
