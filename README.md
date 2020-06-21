@@ -22,20 +22,16 @@ Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 link: https://www.tenforums.com/tutorials/54585-change-powershell-script-execution-policy-windows-10-a.html
 
 ## To Start new project in Django use this command:
-<br />
 ```
 django-admin startproject project-name
 ```
-<br />
 
 ## To test your Django project run the test server using this command:
-<br />
 ```
 python3 manage.py runserver
 ```
-<br />
 
 The output shout show you the URL of Project's homepage and listening port like:
 <br />
 http://localhost:8000
-<br />
+
