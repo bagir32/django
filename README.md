@@ -1,5 +1,5 @@
 # Django
-learn django framwork
+Learn django framwork
 
 ## Installing xmapp: 
 https://blog.templatetoaster.com/install-xampp-on-windows/
@@ -31,7 +31,7 @@ django-admin startproject project-name
 python3 manage.py runserver
 ```
 
-The output shout show you the URL of Project's homepage and listening port like:
+The output shoud show you the URL of Project's homepage and listening port like:
 <br />
 http://localhost:8000
 
