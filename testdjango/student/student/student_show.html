@@ -1,20 +1,57 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Student_Show</title>-->
+<!--    </head>-->
+<!--    <body>-->
+<!--    <h1>The Students Here at Dataflair</h1>-->
+<!--    <div>-->
+<!--    <ul>-->
+<!--    {% for stud in student %}-->
+<!--    <li>-->
+<!--    <h2>Name {{ stud.name }}</h2>-->
+<!--    <p> department {{ stud.department}}</p>-->
+<!--    <p> class {{ stud.stud_class}}</p>-->
+<!--    </li>-->
+<!--    {% endfor %}-->
+<!--    </ul>-->
+<!--    </div>-->
+<!--    </body>-->
+<!--    </html>-->
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Student_Show</title>
-    </head>
-    <body>
-    <h1>The Students Here at Dataflair</h1>
-    <div>
-    <ul>
-    {% for stud in student %}
-    <li>
-    <h2>Name {{ stud.name }}</h2>
-    <p> department {{ stud.department}}</p>
-    <p> class {{ stud.stud_class}}</p>
-    </li>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1>The Students Here at Dataflair</h1>
+<div class="container">
+  <table class="table table-bordered">
+    <thead >
+      <tr bgcolor="#a52a2a">
+        <th>Name</th>
+        <th>department</th>
+        <th>class</th>
+      </tr>
+    </thead>
+      {% for stud in student %}
+    <tbody>
+      <tr bgcolor="aquared">
+        <td>{{ stud.name }}</td>
+        <td>{{ stud.department}}</td>
+        <td>{{ stud.stud_class}}</td>
+      </tr>
     {% endfor %}
-    </ul>
-    </div>
-    </body>
-    </html>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
