@@ -23,5 +23,7 @@ urlpatterns = [
     path('student/', include('student.urls')),
     path('redirect/', data_flair),
     path('dataflair/', index),
-    path('djangotutor/', tutorial.as_view())
+    path('djangotutor/', tutorial.as_view()),
+    path('setcookie', setcookie),
+
 ]

@@ -10,3 +10,9 @@ def index(request):
 
 def data_flair(request):
     return redirect('/dataflair')
+
+
+def setcookie(request):
+    html = HttpResponse("<h1>Dataflair Django Tutorial</h1>")
+    html.set_cookie('dataflair', 'Hello this is your Cookies', max_age=None)
+    return html
