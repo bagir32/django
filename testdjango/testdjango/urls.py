@@ -25,5 +25,5 @@ urlpatterns = [
     path('dataflair/', index),
     path('djangotutor/', tutorial.as_view()),
     path('setcookie', setcookie),
-
+    path('getcookie', showcookie),
 ]

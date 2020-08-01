@@ -16,3 +16,8 @@ def setcookie(request):
     html = HttpResponse("<h1>Dataflair Django Tutorial</h1>")
     html.set_cookie('dataflair', 'Hello this is your Cookies', max_age=None)
     return html
+
+def showcookie(request):
+    show = request.COOKIES['dataflair']
+    html = "<center> New Page <br>{0}</center>".format(show)
+    return HttpResponse(html)
