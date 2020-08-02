@@ -35,3 +35,12 @@ def showcookie(request):
         return html
     else:
         return redirect('/setcookie')
+
+
+def delete_co(request):
+    if request.COOKIES.get('visits'):
+        response = HttpResponse("<h1>dataflair<br>Cookie deleted</h1>")
+        response.delete_cookie("visits")
+    else:
+        response = HttpResponse("<h1>dataflair</h1>need to create cookie before deleting")
+    return response

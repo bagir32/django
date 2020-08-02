@@ -26,4 +26,6 @@ urlpatterns = [
     path('djangotutor/', tutorial.as_view()),
     path('setcookie', setcookie),
     path('getcookie', showcookie),
+    path('deleteco', delete_co),
+    
 ]
