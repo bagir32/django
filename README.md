@@ -1,9 +1,13 @@
 # Django
 Learn django framwork
 
-## Installing xmapp: 
+## Installing xampp: 
 https://blog.templatetoaster.com/install-xampp-on-windows/
 
+## Start XAMPP on linux
+```
+sudo /opt/lampp/lampp status
+```
 ## mysql database as backend database using xmapp:
 http://localhost/phpmyadmin
 
