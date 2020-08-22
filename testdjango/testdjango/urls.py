@@ -27,5 +27,9 @@ urlpatterns = [
     path('setcookie', setcookie),
     path('getcookie', showcookie),
     path('deleteco', delete_co),
-    
+    path('testcookie/', cookie_session),
+    path('deletecookie/', cookie_delete),
+    path('create/', create_session),
+    path('access', access_session),
+    path('delete/', delete_session),
 ]
