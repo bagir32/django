@@ -57,7 +57,7 @@ def cookie_session(request):
 def cookie_delete(request):
     if request.session.test_cookie_worked():
         request.session.delete_test_cookie()
-        response = HttpResponse("dataflair<br> cookie createed")
+        response = HttpResponse("dataflair<br> cookie Detected")
     else:
         response = HttpResponse("Dataflair <br> Your browser doesnot accept cookies")
     return response
@@ -74,7 +74,7 @@ def access_session(request):
     response = "<h1>Welcome to Sessions of dataflair</h1><br>"
     if request.session.get('name'):
         response += "Name : {0} <br>".format(request.session.get('name'))
-    if request.session.get('password'):
+    if request.session.get('comment'):
         response += "Password : {0} <br>".format(request.session.get('comment'))
         return HttpResponse(response)
     else:
@@ -83,9 +83,10 @@ def access_session(request):
 
 def delete_session(request):
     try:
+        del request.session['comment']
         del request.session['name']
         del request.session['password']
-        del request.session['comment']
+
     except KeyError:
-        pass
+        return HttpResponse("<h1>dataflair<br>Session Not found</h1>")
     return HttpResponse("<h1>dataflair<br>Session Data cleared</h1>")
