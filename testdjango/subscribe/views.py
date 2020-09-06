@@ -8,6 +8,7 @@ from django.core.mail import send_mail
 # DataFlair #Send Email
 def subscribe(request):
     sub = forms.Subscribe()
+    print(request.POST)
     if request.method == 'POST':
         sub = forms.Subscribe(request.POST)
         subject = 'Welcome to DataFlair'

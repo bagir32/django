@@ -33,4 +33,6 @@ urlpatterns = [
     path('access', access_session),
     path('delete/', delete_session),
     path('subscribe/', include('subscribe.urls')),
+    path('registration/', include('registration.urls')),
+
 ]
