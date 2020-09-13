@@ -33,4 +33,5 @@ urlpatterns = [
     path('access', access_session),
     path('delete/', delete_session),
     path('subscribe/', include('subscribe.urls')),
+    path('upload/', include('profile_maker.urls')),
 ]
