@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'student',
     'subscribe',
     'registration',
+    'profile_maker',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +80,8 @@ WSGI_APPLICATION = 'testdjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'web_site',
+         'NAME': 'web_site',
+        # 'NAME': 'new_database', 
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
@@ -126,6 +128,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/static/'
+
+#file upload
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = 'media/'
+
 
 
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
@@ -137,4 +145,4 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'dataflair314@gmail.com'
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_PASSWORD = '***REMOVED***'

@@ -14,12 +14,24 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include, setcookie, showcookie
+from django.urls import path, include
+from .views import *
+from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('student/', include('student.urls')),
+    path('redirect/', data_flair),
+    path('dataflair/', index),
+    path('djangotutor/', tutorial.as_view()),
     path('setcookie', setcookie),
-    path('getcookie', showcookie)
-
+    path('getcookie', showcookie),
+    path('deleteco', delete_co),
+    path('testcookie/', cookie_session),
+    path('deletecookie/', cookie_delete),
+    path('create/', create_session),
+    path('access', access_session),
+    path('delete/', delete_session),
+    path('subscribe/', include('subscribe.urls')),
+    path('upload/', include('profile_maker.urls')),
 ]
