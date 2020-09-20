@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'subscribe',
     'registration',
     'profile_maker',
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -127,8 +128,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = '/static/'
+# STATIC_URL = '/static/'
+# STATIC_ROOT = '/static/'
 
 #file upload
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -146,3 +147,12 @@ EMAIL_USE_SSL = False
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'dataflair314@gmail.com'
 EMAIL_HOST_PASSWORD = '*'
+
+#DataFlair #Django #Static files
+STATIC_URL = '/static/'
+#--------------------------------------------------
+STATIC_ROOT = os.path.join(BASE_DIR, 'root')
+#-----------------------------------------------------
+STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static'),
+]
