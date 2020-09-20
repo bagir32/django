@@ -1,6 +1,6 @@
 # Django
 Learn django framwork
-
+#update test for name
 ## Installing xampp: 
 https://blog.templatetoaster.com/install-xampp-on-windows/
 
