@@ -34,4 +34,5 @@ urlpatterns = [
     path('delete/', delete_session),
     path('subscribe/', include('subscribe.urls')),
     path('upload/', include('profile_maker.urls')),
-]
+    path('', include('home.urls')),
+    ]
