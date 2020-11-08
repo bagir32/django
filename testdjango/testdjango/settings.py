@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'registration',
     'profile_maker',
     'home',
+    'products',
 ]
 
 MIDDLEWARE = [
