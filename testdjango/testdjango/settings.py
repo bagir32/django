@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'djangocms_admin_style',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,7 +44,15 @@ INSTALLED_APPS = [
     'profile_maker',
     'home',
     'products',
+    'django.contrib.sites',
+    'cms',
+    'menus',
+    'treebeard',
+    'sekizai',
 ]
+# Site_id Setup
+SITE_ID = 1
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -53,22 +62,37 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'django.middleware.locale.LocaleMiddleware',
+    'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.toolbar.ToolbarMiddleware',
+    'cms.middleware.language.LanguageCookieMiddleware',
+
+    'cms.context_processors.cms_settings',
+    'django.template.context_processors.i18n',
 ]
 
 ROOT_URLCONF = 'testdjango.urls'
 
+CMS_TEMPLATES = [
+    ('home.html', 'Home page template'),
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'student')],
+        'DIRS': [os.path.join(BASE_DIR, 'student'), 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
+            'context_processors': ['cms.context_processors.cms_settings',
+                                   'django.template.context_processors.i18n',
+                                   'sekizai.context_processors.sekizai',
+                                   'django.template.context_processors.debug',
+                                   'django.template.context_processors.request',
+                                   'django.contrib.auth.context_processors.auth',
+                                   'django.contrib.messages.context_processors.messages',
+                                   ],
         },
     },
 ]
@@ -82,15 +106,14 @@ WSGI_APPLICATION = 'testdjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'web_site',
-        # 'NAME': 'new_database', 
+        'NAME': 'web_site',
+        # 'NAME': 'new_database',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
 }
-
 
 
 # Password validation
@@ -115,7 +138,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
+LANGUAGES = [
+    ('en', 'English'),
+    ('de', 'German'),
+]
 
 TIME_ZONE = 'UTC'
 
@@ -132,13 +159,12 @@ USE_TZ = True
 # STATIC_URL = '/static/'
 # STATIC_ROOT = '/static/'
 
-#file upload
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = 'media/'
+# file upload
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_URL = 'media/'
 
 
-
-EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 
 # EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
@@ -149,11 +175,14 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'dataflair314@gmail.com'
 EMAIL_HOST_PASSWORD = '*'
 
-#DataFlair #Django #Static files
+# DataFlair #Django #Static files
 STATIC_URL = '/static/'
-#--------------------------------------------------
+# --------------------------------------------------
 STATIC_ROOT = os.path.join(BASE_DIR, 'root')
-#-----------------------------------------------------
+# -----------------------------------------------------
 STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")

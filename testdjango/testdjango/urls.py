@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .views import *
-from django.conf.urls import url
+
+from django.conf.urls import url, include, static
+from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    #path('admin/', admin.site.urls),
     path('student/', include('student.urls')),
     path('redirect/', data_flair),
     path('dataflair/', index),
@@ -35,4 +37,6 @@ urlpatterns = [
     path('subscribe/', include('subscribe.urls')),
     path('upload/', include('profile_maker.urls')),
     path('', include('home.urls')),
-    ]
+    url(r'^admin/', admin.site.urls),
+    url(r'^', include('cms.urls')),
+]  # + static.static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
